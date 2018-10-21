@@ -1,0 +1,14 @@
+{
+  "name": "graphpack-ts-support",
+  "version": "1.0.0",
+  "description": "Support typecript in Graphpack",
+  "private": true,
+  "scripts": {
+    "start": "graphpack"
+  },
+  "devDependencies": {
+    "graphpack": "^1.0.0-alpha.3",
+    "ts-loader": "^5.2.2",
+    "typescript": "^3.1.3"
+  }
+}
