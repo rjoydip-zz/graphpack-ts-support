@@ -10,7 +10,7 @@ Support typecript in Graphpack through webpack.
 - Install `ts-loader` and `typescript`
 - Create tsconfig.json and paste below code.
 
-```json
+```js
 {
 	"compilerOptions": {
 		// Target latest version of ECMAScript.
