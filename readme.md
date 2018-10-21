@@ -16,7 +16,7 @@ Support typecript in Graphpack through webpack.
 		"target": "esnext",
 		"moduleResolution": "node",
 		"allowJs": true,
-		"noEmit": false,
+		"noEmit": false,  // for ts only
 		"strict": true,
 		"isolatedModules": true,
 		"esModuleInterop": true
@@ -27,7 +27,7 @@ Support typecript in Graphpack through webpack.
 }
 ```
 
-- Create graphpack.config.js
+- Create graphpack.config.js and paste below code
 
 ```js
 module.exports = {
@@ -44,6 +44,45 @@ module.exports = {
         };
         return config;
     },
+};
+```
+
+### Through babel
+
+- Install `@babel/plugin-proposal-object-rest-spread` and `@babel/preset-typescript`
+
+- Create tsconfig.json and paste below code.
+
+```js
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"noEmit": true, // for babel only
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true
+	},
+	"include": [
+		"src"
+	]
+}
+```
+
+- Create `babel.config.js` and paste below code
+
+```js
+module.exports = api => {
+    api.cache(true);
+    return {
+        "presets": [
+            "@babel/typescript"
+        ],
+        "plugins": [
+            "@babel/proposal-object-rest-spread" // don't know wheher this plugin isn't in core
+        ]
+    };
 };
 ```
 
